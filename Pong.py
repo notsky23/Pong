@@ -156,7 +156,7 @@ def draw(canvas):
     elif ((ball_pos[0] + 10 + PAD_WIDTH) >= WIDTH) and ((paddle2_pos[1] - HALF_PAD_HEIGHT) <= (ball_pos[1]) <= (paddle2_pos[1] + HALF_PAD_HEIGHT)):
         ball_vel[0] = math.ceil(ball_vel[0] * -1.1)
         ball_vel[1] = math.ceil(ball_vel[1] * 1.1)
-        ball_pos[0] = WIDTH - PAD_WIDTH - 20 - 1
+        ball_pos[0] = WIDTH - PAD_WIDTH - 10 - 1
         LEFT = True
         RIGHT = False
         if ball_vel[0] == 0:
@@ -202,8 +202,6 @@ def draw(canvas):
                      PAD_WIDTH)
     
     # draw scores
-    # canvas.draw_text(str(score1), (130, 50), 50, score_color1)
-    # canvas.draw_text(str(score2), (430, 50), 50, score_color2)
     font1 = pygame.font.SysFont("Comic Sans MS", 20)
     label1 = font1.render(str(score1), True, score_color1)
     canvas.blit(label1, (130, 50))
@@ -240,19 +238,9 @@ def keyup(key):
 
         
 # create frame
-# frame = simplegui.create_frame("Pong", WIDTH, HEIGHT)
 window = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
 pygame.display.set_caption('Pong')
 
-# register handlers
-# frame.set_draw_handler(draw)
-# frame.set_keydown_handler(keydown)
-# frame.set_keyup_handler(keyup)
-# frame.add_button("Restart", new_game, 200)
-
-# start frame
-# new_game()
-# frame.start()
 while True:
 
     draw(window)
