@@ -225,7 +225,7 @@ def keydown(event):
     elif event.key == K_DOWN:
         paddle2_vel[1] += 10
     
-def keyup(key):
+def keyup(event):
     global paddle1_vel, paddle2_vel
 
     """ Velocity of green paddle when key is released """
